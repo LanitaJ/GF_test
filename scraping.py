@@ -31,6 +31,14 @@ def scrap_details():
         details.append(detail_code.text)
     return details
 
-
-
-
+def scrap_time_sugges():
+    times_sugges = []
+    times = []
+    sugges = []
+    for time_sugges_code in SOUP.find_all('div', 'force-font force-font--s12'):
+        for time_sugges in time_sugges_code.find_all('span'):
+            times_sugges.append(time_sugges)
+        times.append(times_sugges[0])
+        sugges.append(times_sugges[1])
+    data = {times : sugges}
+    return data
