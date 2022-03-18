@@ -15,7 +15,7 @@ def dump_to_xlsx():
     sprices = scraping.scrap_second_price()
     details = scraping.scrap_detail()
     data_times_sugges = scraping.scrap_time_sugges()
-    
+    #Writing all data to excel file
     for name, fprice, sprice, detail, time, sugges in names, fprices, sprices, details, data_times_sugges.keys(), data_times_sugges.values():
         sheet.cell(row=0, column=1, value='Название')
         sheet.cell(row=0, column=2, value='Желаемая цена')
